@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<buildster directory="build" distribution="../Distribution">
+<buildster directory="build" distribution="../Distribution" cpp="17">
   <project directory="../Project">
     <dependencies>
       <dependency>
@@ -22,7 +22,7 @@
               <switch id="BUILDSTER_OS">
                 <case check="Windows">MinGW Makefiles</case>
                 <case check="Linux">Unix Makefiles</case>
-                <case check="Darwin">Xcode</case>
+                <case check="Darwin">Unix Makefiles</case>
                 <default><quit></quit></default>
               </switch>
             </generator>
@@ -53,11 +53,24 @@
           <switch id="BUILDSTER_OS">
             <case check="Windows">MinGW Makefiles</case>
             <case check="Linux">Unix Makefiles</case>
-            <case check="Darwin">Xcode</case>
+            <case check="Darwin">Unix Makefiles</case>
             <default><quit></quit></default>
           </switch>
         </generator>
-        <definitions></definitions>
+        <definitions>
+          <definition>
+            <key>STB_IMAGE_WRITE_IMPLEMENTATION</key>
+            <value>1</value>
+          </definition>
+          <definition>
+            <key>STB_IMAGE_IMPLEMENTATION</key>
+            <value>1</value>
+          </definition>
+          <definition>
+            <key>TINYGLTF_IMPLEMENTATION</key>
+            <value>1</value>
+          </definition>
+        </definitions>
         <links>
           <link>*tinygltf*</link>
         </links>
