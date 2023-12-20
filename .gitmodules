@@ -1,0 +1,3 @@
+[submodule "Project/exporter/GlTFExporter"]
+	path = Project/exporter/GlTFExporter
+	url = https://github.com/PierceLBrooks/GlTFExporter.git
